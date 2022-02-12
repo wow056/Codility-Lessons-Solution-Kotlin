@@ -1,14 +1,16 @@
 fun solution(A: IntArray): Int {
-    // write your code in Kotlin 1.3.11 (Linux)
-    var pairCount = 0
-    for(zeroCandidateIndex in 0..(A.lastIndex)) {
-        if(A[zeroCandidateIndex] == 0) {
-            for (oneCandidateIndex in (zeroCandidateIndex + 1)..(A.lastIndex)) {
-                if (A[oneCandidateIndex] == 1) {
-                    pairCount += 1
-                }
-            }
+    var result = 0
+    var countAdder = 0
+    A.forEach {
+        if (it == 0) {
+            countAdder += 1
+        }
+        if (it == 1) {
+            result += countAdder
+        }
+        if (result > 1_000_000_000) {
+            return -1
         }
     }
-    return pairCount
+    return result
 }
