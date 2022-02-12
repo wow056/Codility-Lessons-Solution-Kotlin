@@ -9,3 +9,4 @@ fun solution(A: IntArray): Int {
     }
     return unPairedSet.keys.first()
 }
+// correctness 100% performance 75%
